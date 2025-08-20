@@ -1,0 +1,77 @@
+{% extends 'home.html' %}
+
+
+
+
+
+
+
+{% block title %} Register user {% endblock %}
+
+
+
+
+
+
+
+{% block content %}
+<!-- Register Form. -->
+ <form method="POST">
+    {%csrf_token%}
+    <!-- Container to center the login form vertically and horizontally -->
+    <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <!-- Registeration card-->
+        <div class="login-card shadow rounded-4 p-4 bg-white" style="width: 350px;">
+            <h2 class="text-center fw-bold mb-4"> Welcome </h2>
+
+            <!-- Username -->
+            <div class="mb-3">
+                <label for="username" class="form-label"> Username: </label>
+                <input type="text" name="username" class="form-control" placeholder="Enter username">
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label"> Email: </label>
+                <input type="email" name="email" class="form-control" placeholder="Enter email">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-4" style="position: relative;">
+                <label for="password" class="form-label"> Password: </label>
+                <div class="position: relative">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+                    <span class="fa fa-fw fa-eye field-icon toggle-password"
+                        style="position: absolute; top: 70%; right: 20px; transform: translateY(-50%); cursor: pointer;"></span>
+                </div>
+                
+            </div>
+
+            <!-- Login button -->
+            <button class="btn btn-dark w-100 rounded-pill"> Register user </button>
+            <a href="/login/" class="btn btn-dark w-100 rounded-pill text-decoration: none; mt-2"> Login </a>
+        </div>
+    </div>
+ </form>
+
+
+ <!-- Javascripts code that enables the eye icon to display the password -->
+<script>
+    document.querySelector('.toggle-password').addEventListener('click', function (e) {
+        const passwordInput = document.getElementById('password');
+        const icon = this;
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        } else {
+            passwordInput.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    });
+</script>
+{% endblock %}
+
+
+
