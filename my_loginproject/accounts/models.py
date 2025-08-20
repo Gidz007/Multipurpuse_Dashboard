@@ -11,7 +11,7 @@ class RegisterUser(models.Model):
     password = models.CharField(max_length=255)  # Handling the hashing later on.
 
     def __str__(self):
-        return self.username
+        return f'{self.username}'
 
 
 # Tracking login activity.
@@ -20,7 +20,7 @@ class LoginActivity(models.Model):
     login_time = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
-        return self.username
+        return f'{self.username}'
 
 
 class Product(models.Model):
@@ -34,4 +34,4 @@ class Product(models.Model):
     recorded_date = models.DateField(default=datetime.now)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}'
