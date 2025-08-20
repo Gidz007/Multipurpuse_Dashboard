@@ -1,0 +1,31 @@
+/* Center the login card using flex and full screen heigh */
+body {
+    background-color: #dbe3ec; /* light blue/grey background */
+}
+
+/* Custom card styling for login box */
+.login-card {
+    width: 350px; /* width of login box */
+    border-radius: 20px; /* Rounded corners */
+}
+
+/* Style the input group */
+.input-group-text {
+    border: none;
+    background-color: rgb(15, 16, 13);
+}
+
+/* Style the input */
+.form-control {
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Style the button */
+.btn-dark {
+    border-radius: 30px;
+    padding: 10px;
+    font-weight: bold;
+}
+
